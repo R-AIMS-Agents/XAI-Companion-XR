@@ -5,6 +5,10 @@ namespace XAICompanion.Utils
     /// <summary>
     /// Base class for MonoBehaviours that must exist at most once; the first instance to Awake becomes <see cref="Instance"/> and later duplicates destroy their GameObject.
     /// </summary>
+#if UNITY_6000_7_OR_NEWER
+    // Instance is cleared in OnDestroy, which also runs when Play mode stops.
+    [Unity.Scripting.LifecycleManagement.NoAutoStaticsCleanup]
+#endif
     public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
     {
         /// <summary>

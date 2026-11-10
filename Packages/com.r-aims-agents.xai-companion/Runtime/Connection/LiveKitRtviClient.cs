@@ -19,6 +19,10 @@ namespace XAICompanion.Connection
     /// RTVI message types (tool calls, behaviour streams, game events).
     /// </summary>
     [RequireComponent(typeof(LiveKitConnector))]
+#if UNITY_6000_7_OR_NEWER
+    // The only static, KnownTypes, is a fixed lookup table that never changes.
+    [Unity.Scripting.LifecycleManagement.NoAutoStaticsCleanup]
+#endif
     public class LiveKitRtviClient : MonoBehaviour
     {
         private const string RtviLabel = "rtvi-ai";
