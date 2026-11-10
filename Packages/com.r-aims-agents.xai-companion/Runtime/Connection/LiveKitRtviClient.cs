@@ -39,12 +39,14 @@ namespace XAICompanion.Connection
             "bot-tts-text",
             "bot-llm-started",
             "bot-llm-text",
+            "bot-transcription",
             "user-mute-started",
             "user-mute-stopped",
             "user-started-speaking",
             "user-stopped-speaking",
             "user-transcription",
-            "user-llm-text"
+            "user-llm-text",
+            "metrics"
         };
 
         /// <summary>
