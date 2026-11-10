@@ -3,18 +3,18 @@
   "version": "0.1.0",
   "displayName": "XAI Companion",
   "description": "Embodied, explainable AI companion for XR: LiveKit connection to a Python backend, agent state, lip sync, blinking and gaze for a humanoid avatar. Also add the LiveKit Unity SDK and uLipSync git packages to the project manifest.",
-  "unity": "6000.7",
+  "unity": "6000.3",
   "license": "MIT",
   "author": {
     "name": "R-AIMS-Agents",
     "url": "https://github.com/R-AIMS-Agents"
   },
   "dependencies": {
-    "com.unity.inputsystem": "6.7.0",
+    "com.unity.inputsystem": "1.20.1",
     "com.unity.nuget.newtonsoft-json": "3.2.2",
-    "com.unity.ugui": "2.7.0",
+    "com.unity.ugui": "2.0.0",
     "com.unity.xr.interaction.toolkit": "3.7.0",
-    "com.unity.xr.management": "6.0.0"
+    "com.unity.xr.management": "4.6.1"
   },
   "samples": [
     {
