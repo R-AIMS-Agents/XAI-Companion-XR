@@ -15,5 +15,12 @@
     "com.unity.ugui": "2.7.0",
     "com.unity.xr.interaction.toolkit": "3.7.0",
     "com.unity.xr.management": "6.0.0"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Rocketbox Agent",
+      "description": "Ready-to-use agent built on the Microsoft Rocketbox avatar Female_Adult_01 (MIT): Humanoid avatar with URP materials, face rig profile, uLipSync viseme mapping, an animator with random clip variants per agent state, and an XR demo scene (XR Origin, teleportable floor) wired to the LiveKit connector and debug UI. The demo scene uses the XR Interaction Toolkit \"Starter Assets\" and \"World Space UI\" samples.",
+      "path": "Samples~/Rocketbox Agent"
+    }
+  ]
 }

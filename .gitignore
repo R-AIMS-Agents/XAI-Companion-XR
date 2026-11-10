@@ -87,3 +87,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Imported copy of the package's own sample; the source lives in the package's Samples~ folder
+/Assets/Samples/XAI Companion/
+/Assets/Samples/XAI Companion.meta

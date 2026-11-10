@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d832f158cb46843ad6ee60682464a7, type: 3}
+  m_Name: Rocketbox Face Rig Profile
+  m_EditorClassIdentifier: XAICompanion::XAICompanion.Agent.FaceRigProfile
+  EyeBlink:
+    LeftEye: blendShape1.AK_09_EyeBlinkLeft
+    RightEye: blendShape1.AK_10_EyeBlinkRight
+  EyeLookLeft:
+    LeftEye: blendShape1.AK_15_EyeLookOutLeft
+    RightEye: blendShape1.AK_14_EyeLookInRight
+  EyeLookRight:
+    LeftEye: blendShape1.AK_13_EyeLookInLeft
+    RightEye: blendShape1.AK_16_EyeLookOutRight
+  EyeLookUp:
+    LeftEye: blendShape1.AK_17_EyeLookUpLeft
+    RightEye: blendShape1.AK_18_EyeLookUpRight
+  EyeLookDown:
+    LeftEye: blendShape1.AK_11_EyeLookDownLeft
+    RightEye: blendShape1.AK_12_EyeLookDownRight
