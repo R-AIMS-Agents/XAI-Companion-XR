@@ -10,7 +10,7 @@ namespace XAICompanion.Connection
 {
     /// <summary>
     /// Captures the local microphone and publishes it to the connected LiveKit room, either always on or gated by an
-    /// optional push-to-talk input action. Captures from the system default device unless another device is selected.
+    /// optional push-to-talk input action, and can be muted manually. Captures from the system default device unless another device is selected.
     /// </summary>
     [RequireComponent(typeof(LiveKitConnector))]
     public class LiveKitMicrophonePublisher : MonoBehaviour
@@ -32,7 +32,7 @@ namespace XAICompanion.Connection
         private GameObject _sourceObject;
         private MicrophoneSource _source;
         private LocalAudioTrack _track;
-        private bool _muted;
+        private bool _trackMuted;
         private bool _publishing;
         private float _inputLevel;
 
@@ -40,6 +40,11 @@ namespace XAICompanion.Connection
         /// The selected capture device name, or null for the system default device.
         /// </summary>
         public string Device { get; private set; }
+
+        /// <summary>
+        /// Whether the microphone is muted manually, overriding push-to-talk; kept across republishes.
+        /// </summary>
+        public bool Muted { get; private set; }
 
         /// <summary>
         /// RMS level (0 to 1) of the latest raw microphone buffer, before audio processing; 0 while no source is live.
@@ -60,12 +65,7 @@ namespace XAICompanion.Connection
 
         private void Update()
         {
-            if (!PushToTalk || _track == null || !PushToTalkAction)
-                return;
-
-            bool talking = PushToTalkAction.action.IsPressed();
-            if (talking == _muted)
-                SetMuted(!talking);
+            ApplyMute();
         }
 
         private void OnDestroy()
@@ -90,6 +90,15 @@ namespace XAICompanion.Connection
 
             if (_room != null && !_publishing)
                 StartCoroutine(PublishSelectedDevice(_room));
+        }
+
+        /// <summary>
+        /// Mutes or unmutes the microphone manually; while muted, push-to-talk has no effect.
+        /// </summary>
+        public void SetMuted(bool muted)
+        {
+            Muted = muted;
+            ApplyMute();
         }
 
         /// <summary>
@@ -203,20 +212,27 @@ namespace XAICompanion.Connection
             _track = track;
             _source.AudioRead += OnAudioRead;
             _source.Start();
-            _muted = false;
-            if (PushToTalk)
-                SetMuted(true);
+            _trackMuted = false;
+            ApplyMute();
 
             Debug.Log($"Microphone '{deviceLabel}' published (push-to-talk: {PushToTalk}, audio processing: {_source.AudioProcessingEnabled})");
         }
 
         /// <summary>
-        /// Mutes or unmutes the published track, which also signals the mute state to the backend.
+        /// Mutes the published track while muted manually or while push-to-talk is not held, which also signals the
+        /// mute state to the backend. Push-to-talk without an assigned action stays muted.
         /// </summary>
-        private void SetMuted(bool muted)
+        private void ApplyMute()
         {
+            if (_track == null)
+                return;
+
+            bool muted = Muted || (PushToTalk && (!PushToTalkAction || !PushToTalkAction.action.IsPressed()));
+            if (muted == _trackMuted)
+                return;
+
             ((ILocalTrack)_track).SetMute(muted);
-            _muted = muted;
+            _trackMuted = muted;
         }
 
         /// <summary>

@@ -16,6 +16,7 @@
                         <engine:Label text="Input" enable-rich-text="false" class="dbg-label-dim"/>
                         <engine:ProgressBar name="mic-level-bar" low-value="0" high-value="1" class="dbg-meter"/>
                         <engine:Label name="mic-level-label" text="—" enable-rich-text="false" class="dbg-label-dim dbg-mono dbg-meter__value"/>
+                        <engine:Button name="mute-button" text="Mute" class="dbg-button"/>
                     </engine:VisualElement>
                 </engine:VisualElement>
                 <engine:VisualElement class="dbg-section">

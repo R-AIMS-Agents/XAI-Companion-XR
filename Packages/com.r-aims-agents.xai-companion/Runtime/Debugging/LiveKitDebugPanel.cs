@@ -11,7 +11,7 @@ namespace XAICompanion.Debugging
 {
     /// <summary>
     /// Drives the debug panel's LiveKit tab: connection, agent-speaking and audio-track status chips, a microphone
-    /// selector with input level meter, a manual disconnect control, and a timestamped transcript and raw RTVI feed.
+    /// selector with input level meter and mute toggle, a manual disconnect control, and a timestamped transcript and raw RTVI feed.
     /// </summary>
     [RequireComponent(typeof(UIDocument))]
     public class LiveKitDebugPanel : MonoBehaviour
@@ -31,6 +31,7 @@ namespace XAICompanion.Debugging
         private const string SystemDefaultLabel = "System default";
         private const string MicLevelBarName = "mic-level-bar";
         private const string MicLevelLabelName = "mic-level-label";
+        private const string MuteButtonName = "mute-button";
         private const float MicLevelMinDb = -60f;
         private const float MicLevelHotDb = -6f;
         private const float MicLevelFallPerSecond = 1.5f;
@@ -63,6 +64,7 @@ namespace XAICompanion.Debugging
         private Label _micLevelLabel;
         private float _displayedMicLevel;
         private int _shownMicDb = int.MaxValue;
+        private Button _muteButton;
         private VisualElement _botSpeakingChip;
         private Label _botSpeakingLabel;
         private VisualElement _audioTrackChip;
@@ -110,6 +112,8 @@ namespace XAICompanion.Debugging
                 _microphoneDropdown.UnregisterValueChangedCallback(OnMicrophoneChanged);
                 _microphoneDropdown.UnregisterCallback<PointerDownEvent>(OnMicrophoneDropdownPointerDown, TrickleDown.TrickleDown);
             }
+            if (_muteButton != null)
+                _muteButton.clicked -= OnMuteClicked;
             if (_transcriptClearButton != null)
                 _transcriptClearButton.clicked -= OnTranscriptClearClicked;
             if (_feedPauseButton != null)
@@ -161,6 +165,7 @@ namespace XAICompanion.Debugging
             _microphoneDropdown = rootElement.Q<DropdownField>(MicrophoneDropdownName);
             _micLevelBar = rootElement.Q<ProgressBar>(MicLevelBarName);
             _micLevelLabel = rootElement.Q<Label>(MicLevelLabelName);
+            _muteButton = rootElement.Q<Button>(MuteButtonName);
             _botSpeakingChip = rootElement.Q(BotSpeakingChipName);
             _botSpeakingLabel = rootElement.Q<Label>(BotSpeakingLabelName);
             _audioTrackChip = rootElement.Q(AudioTrackChipName);
@@ -174,6 +179,8 @@ namespace XAICompanion.Debugging
             RefreshMicrophoneChoices();
             _microphoneDropdown.RegisterValueChangedCallback(OnMicrophoneChanged);
             _microphoneDropdown.RegisterCallback<PointerDownEvent>(OnMicrophoneDropdownPointerDown, TrickleDown.TrickleDown);
+            _muteButton.clicked += OnMuteClicked;
+            _muteButton.text = _microphonePublisher.Muted ? "Unmute" : "Mute";
             _transcriptClearButton.clicked += OnTranscriptClearClicked;
             _feedPauseButton.clicked += OnFeedPauseClicked;
             _feedClearButton.clicked += OnFeedClearClicked;
@@ -231,6 +238,12 @@ namespace XAICompanion.Debugging
         private void OnMicrophoneChanged(ChangeEvent<string> evt)
         {
             _microphonePublisher.SetDevice(evt.newValue == _systemDefaultChoice ? null : evt.newValue);
+        }
+
+        private void OnMuteClicked()
+        {
+            _microphonePublisher.SetMuted(!_microphonePublisher.Muted);
+            _muteButton.text = _microphonePublisher.Muted ? "Unmute" : "Mute";
         }
 
         /// <summary>
