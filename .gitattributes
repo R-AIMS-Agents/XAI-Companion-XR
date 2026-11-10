@@ -1,0 +1,56 @@
+# Git attributes for a Unity project without Git LFS, based on the GameCI Unity template (MIT): https://gist.github.com/webbertakken/ff250a0d5e59a8aae961c2e509c07fbc
+
+# Normalize line endings of text files
+* text=auto
+
+*.cs diff=csharp
+
+# Unity YAML files: no line-ending conversion, merged with Unity's Smart Merge, hidden from language stats
+[attr]unity-yaml-file -text merge=unityyamlmerge linguist-generated
+
+*.asmdef unity-yaml-file -linguist-generated
+*.anim unity-yaml-file
+*.asset unity-yaml-file
+*.brush unity-yaml-file
+*.controller unity-yaml-file
+*.flare unity-yaml-file
+*.fontsettings unity-yaml-file
+*.giparams unity-yaml-file
+*.guiskin unity-yaml-file
+*.mask unity-yaml-file
+*.mat unity-yaml-file
+*.meta unity-yaml-file
+*.mixer unity-yaml-file
+*.overrideController unity-yaml-file
+*.physicMaterial unity-yaml-file
+*.physicsMaterial2D unity-yaml-file
+*.playable unity-yaml-file
+*.prefab unity-yaml-file
+*.preset unity-yaml-file
+*.renderTexture unity-yaml-file
+*.shadervariants unity-yaml-file
+*.spriteatlas unity-yaml-file
+*.terrainlayer unity-yaml-file
+*.unity unity-yaml-file
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tga binary
+*.psd binary
+*.exr binary
+*.hdr binary
+*.fbx binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.ttf binary
+*.otf binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.a binary
+*.bundle binary
+*.cubemap binary
+*.unitypackage binary
