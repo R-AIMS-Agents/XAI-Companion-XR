@@ -20,7 +20,7 @@
 }
 
 .dbg-mono {
-    -unity-font-definition: url("project://database/Assets/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
+    -unity-font-definition: url("project://database/Packages/com.r-aims-agents.xai-companion/Runtime/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
 }
 
 .dbg-panel {
@@ -60,7 +60,7 @@
 .dbg-section {
     flex-shrink: 0;
     margin-bottom: 18px;
-    flex-grow: 1;
+    flex-grow: 0;
     flex-direction: column;
 }
 
@@ -84,27 +84,35 @@
     flex-grow: 1;
 }
 
-.dbg-tabs > .unity-tab-view__header-container {
+.dbg-tabs > .unity-tab-view__content-viewport {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.dbg-tabs--top > .unity-tab-view__content-viewport {
+    justify-content: flex-end;
+}
+
+.dbg-tabs > .unity-tab-view__content-viewport > .unity-tab-view__header-container {
     flex-direction: row;
     flex-shrink: 0;
-    padding: 3px;
+    padding: 3px 1px;
     border-radius: 12px;
     background-color: var(--dbg-surface);
 }
 
-.dbg-tabs--top > .unity-tab-view__header-container {
-    align-self: flex-end;
+.dbg-tabs--top > .unity-tab-view__content-viewport > .unity-tab-view__header-container {
     margin-bottom: 12px;
 }
 
-.dbg-tabs--inner > .unity-tab-view__header-container {
+.dbg-tabs--inner > .unity-tab-view__content-viewport > .unity-tab-view__header-container {
     margin-bottom: 10px;
 }
 
 .dbg-tabs .unity-tab__header {
     min-height: 48px;
     padding: 0 16px;
-    margin: 0;
+    margin: 0 2px;
     border-radius: 8px;
     justify-content: center;
     align-items: center;
@@ -117,7 +125,6 @@
 
 .dbg-tabs--inner .unity-tab__header {
     width: auto;
-    flex-grow: 1;
 }
 
 .dbg-tabs .unity-tab__header:hover {
@@ -145,7 +152,6 @@
 }
 
 .dbg-tabs .unity-tab-view__content-container,
-.dbg-tabs .unity-tab-view__content-viewport,
 .dbg-tabs .unity-tab,
 .dbg-tabs .unity-tab__content-container {
     flex-grow: 1;
@@ -350,7 +356,7 @@
     padding: 6px 0;
     border-radius: 12px;
     background-color: var(--dbg-surface);
-    height: 640px;
+    flex-basis: 0;
 }
 
 .dbg-entry {
@@ -371,7 +377,7 @@
     margin-right: 10px;
     font-size: var(--dbg-font-s);
     color: var(--dbg-text-dim);
-    -unity-font-definition: url("project://database/Assets/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
+    -unity-font-definition: url("project://database/Packages/com.r-aims-agents.xai-companion/Runtime/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
 }
 
 .dbg-entry__marker {
@@ -449,7 +455,7 @@
 .dbg-entry--feed .dbg-entry__prefix,
 .dbg-entry--feed .dbg-entry__text {
     font-size: var(--dbg-font-s);
-    -unity-font-definition: url("project://database/Assets/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
+    -unity-font-definition: url("project://database/Packages/com.r-aims-agents.xai-companion/Runtime/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
 }
 
 .dbg-entry--feed .dbg-entry__text {
