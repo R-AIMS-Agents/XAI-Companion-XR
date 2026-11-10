@@ -270,13 +270,13 @@
       "url": "https://packages.unity.com"
     },
     "io.livekit.livekit-sdk": {
-      "version": "https://github.com/livekit/client-sdk-unity.git",
+      "version": "https://github.com/MirCore/client-sdk-unity.git#9bdaa10e1a7229e3482f89055b3b60016f1b8048",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.2.1"
       },
-      "hash": "51a4ddb296b927c94afe531e2ca3a1d3ce339ba2"
+      "hash": "9bdaa10e1a7229e3482f89055b3b60016f1b8048"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

@@ -13,7 +13,7 @@
     "com.unity.xr.interaction.toolkit": "3.7.0",
     "com.unity.xr.management": "6.0.0",
     "com.unity.xr.openxr": "1.19.0",
-    "io.livekit.livekit-sdk": "https://github.com/livekit/client-sdk-unity.git",
+    "io.livekit.livekit-sdk": "https://github.com/MirCore/client-sdk-unity.git#9bdaa10e1a7229e3482f89055b3b60016f1b8048",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.adaptiveperformance": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
