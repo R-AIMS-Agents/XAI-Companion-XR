@@ -1,4 +1,5 @@
 using UnityEngine;
+using XAICompanion.Utils;
 
 namespace XAICompanion.Agent
 {
@@ -38,14 +39,21 @@ namespace XAICompanion.Agent
         private void LateUpdate()
         {
             if (Time.time >= _nextBlinkTime)
-            {
-                _blinkStartTime = Time.time;
-                _nextBlinkTime = Time.time + BlinkDuration + Random.Range(MinBlinkInterval, MaxBlinkInterval);
-            }
+                Blink();
 
             float weight = BlinkWeight * GetClosure(Time.time - _blinkStartTime);
             SetBlendshape(_eyeLBlinkIndex, weight);
             SetBlendshape(_eyeRBlinkIndex, weight);
+        }
+
+        /// <summary>
+        /// Starts a blink now and schedules the next random blink after it.
+        /// </summary>
+        [Button("Blink", PlayModeOnly = true)]
+        public void Blink()
+        {
+            _blinkStartTime = Time.time;
+            _nextBlinkTime = Time.time + BlinkDuration + Random.Range(MinBlinkInterval, MaxBlinkInterval);
         }
 
         /// <summary>
