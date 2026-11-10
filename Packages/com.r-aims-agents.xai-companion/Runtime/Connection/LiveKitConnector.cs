@@ -43,6 +43,15 @@ namespace XAICompanion.Connection
         }
 
         /// <summary>
+        /// Leaves the room cleanly when the app quits or Play mode stops, before the LiveKit SDK disposes its native client on Application.quitting, so the server drops this participant at once instead of keeping it until its timeout.
+        /// </summary>
+        private void OnApplicationQuit()
+        {
+            StopAllCoroutines();
+            _room?.Disconnect();
+        }
+
+        /// <summary>
         /// Connects, then waits for a disconnect to start the retry cycle over, forever.
         /// </summary>
         private IEnumerator ConnectWithRetry()
