@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3957048928190367427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2713840814038750068}
+  - component: {fileID: 7289764600589018800}
+  - component: {fileID: 7235868335737990944}
+  - component: {fileID: 3973975317987587021}
+  - component: {fileID: 1528837221503744307}
+  - component: {fileID: 6316759952267373846}
+  - component: {fileID: 6339707975531264189}
+  m_Layer: 0
+  m_Name: LiveKitConnector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2713840814038750068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957048928190367427}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7289764600589018800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957048928190367427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a498c208deeab40c39b4ba609d7d222c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: LiveKit::LiveKit.TokenSourceComponent
+  _config: {fileID: 11400000, guid: fa15d8ab0d68e4babcd606d0b0bb3c57, type: 2}
+--- !u!114 &7235868335737990944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957048928190367427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4044a56c35ae5b93d2fa4195681bbde2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiveKitConnector
+--- !u!114 &3973975317987587021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957048928190367427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ff236f5374ede4499b9492fe240ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AgentAudioPlayback
+  AgentAudioSource: {fileID: 0}
+--- !u!114 &1528837221503744307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957048928190367427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f948acce533c746bde1325b3f0c69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Connection.LiveKitRtviClient
+--- !u!114 &6316759952267373846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957048928190367427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74ca1e3a3ee0bf4f90a9a8d71e9bef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Connection.LiveKitTranscriptionLogger
+--- !u!114 &6339707975531264189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957048928190367427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5032cb34d3b804983421909b319ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Connection.LiveKitMicrophonePublisher
+  PushToTalk: 0
+  PushToTalkAction: {fileID: 0}
+  EchoCancellation: 1
+  NoiseSuppression: 1
+  AutoGainControl: 1
