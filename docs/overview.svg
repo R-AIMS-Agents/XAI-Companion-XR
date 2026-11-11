@@ -39,7 +39,7 @@
   <text class="name" x="330" y="32">Unity project (this repository)</text>
 
   <rect class="repo" x="20" y="42" width="620" height="244" rx="6"/>
-  <text class="sub" x="330" y="62">Agent code: Packages/com.r-aims-agents.xai-companion</text>
+  <text class="sub" x="330" y="62">Agent code: Packages/com.trivas.agent</text>
 
   <rect class="stage" x="32" y="74" width="380" height="200" rx="6"/>
   <text class="name" x="222" y="96">Agent</text>
@@ -83,7 +83,7 @@
   <text class="label" x="456" y="230">agent audio</text>
 
   <rect class="host" x="20" y="310" width="620" height="90" rx="6"/>
-  <text class="sub" x="330" y="330">Rocketbox Agent sample: Assets/Samples/XAI Companion</text>
+  <text class="sub" x="330" y="330">Rocketbox Agent sample: Assets/Samples/TrIVA Agent</text>
 
   <rect class="box" x="32" y="342" width="190" height="46" rx="6"/>
   <text class="part" x="127" y="361">Avatar</text>

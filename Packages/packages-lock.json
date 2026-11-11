@@ -10,8 +10,8 @@
       },
       "hash": "ece3272762f2148dd8d3e658ec04fcbd79d4d97e"
     },
-    "com.r-aims-agents.xai-companion": {
-      "version": "file:com.r-aims-agents.xai-companion",
+    "com.trivas.agent": {
+      "version": "file:com.trivas.agent",
       "depth": 0,
       "source": "embedded",
       "dependencies": {

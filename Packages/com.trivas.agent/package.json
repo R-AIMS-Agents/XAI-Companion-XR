@@ -1,0 +1,26 @@
+{
+  "name": "com.trivas.agent",
+  "version": "0.1.0",
+  "displayName": "TrIVA Agent",
+  "description": "Embodied, explainable AI companion for XR: LiveKit connection to a Python backend, agent state, lip sync, blinking and gaze for a humanoid avatar. Also add the LiveKit Unity SDK and uLipSync git packages to the project manifest.",
+  "unity": "6000.3",
+  "license": "MIT",
+  "author": {
+    "name": "TrIVAs",
+    "url": "https://github.com/TrIVAs"
+  },
+  "dependencies": {
+    "com.unity.inputsystem": "1.20.1",
+    "com.unity.nuget.newtonsoft-json": "3.2.2",
+    "com.unity.ugui": "2.0.0",
+    "com.unity.xr.interaction.toolkit": "3.7.0",
+    "com.unity.xr.management": "4.6.1"
+  },
+  "samples": [
+    {
+      "displayName": "Rocketbox Agent",
+      "description": "Ready-to-use agent built on the Microsoft Rocketbox avatar Female_Adult_01 (MIT): Humanoid avatar with URP materials, face rig profile, uLipSync viseme mapping, an animator with random clip variants per agent state, and an XR demo scene (XR Origin, teleportable floor) wired to the LiveKit connector and debug UI. The demo scene uses the XR Interaction Toolkit \"Starter Assets\" and \"World Space UI\" samples.",
+      "path": "Samples~/Rocketbox Agent"
+    }
+  ]
+}

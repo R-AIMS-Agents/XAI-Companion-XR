@@ -1,0 +1,74 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.trivas.agent/Runtime/UI/DebugTheme.uss?fileID=7433441132597879392&amp;guid=ab5bf98479243f04b87a33ec5010e727&amp;type=3#DebugTheme"/>
+    <engine:VisualElement name="debug-panel" picking-mode="Ignore" class="dbg-panel">
+        <engine:TabView name="debug-tabs" class="dbg-tabs dbg-tabs--top">
+            <engine:Tab name="livekit-tab" label="LiveKit">
+                <engine:VisualElement class="dbg-section" style="padding-top: 10px;">
+                    <engine:Label text="ACTIONS" enable-rich-text="false" class="dbg-section-title"/>
+                    <engine:VisualElement class="dbg-row">
+                        <engine:Button name="disconnect-button" text="Disconnect" class="dbg-button dbg-button--danger"/>
+                    </engine:VisualElement>
+                </engine:VisualElement>
+                <engine:VisualElement class="dbg-section">
+                    <engine:Label text="MICROPHONE" enable-rich-text="false" class="dbg-section-title"/>
+                    <engine:DropdownField name="microphone-dropdown" class="dbg-dropdown"/>
+                    <engine:VisualElement class="dbg-row dbg-meter-row">
+                        <engine:Label text="Input" enable-rich-text="false" class="dbg-label-dim"/>
+                        <engine:ProgressBar name="mic-level-bar" low-value="0" high-value="1" class="dbg-meter"/>
+                        <engine:Label name="mic-level-label" text="—" enable-rich-text="false" class="dbg-label-dim dbg-mono dbg-meter__value"/>
+                        <engine:Button name="mute-button" text="Mute" class="dbg-button"/>
+                    </engine:VisualElement>
+                </engine:VisualElement>
+                <engine:VisualElement class="dbg-section">
+                    <engine:Label text="STATE" enable-rich-text="false" class="dbg-section-title"/>
+                    <engine:VisualElement class="dbg-row">
+                        <engine:VisualElement name="connection-chip" class="dbg-chip dbg-chip--large dbg-chip--error">
+                            <engine:VisualElement class="dbg-chip__dot"/>
+                            <engine:Label name="connection-status-label" text="Disconnected" enable-rich-text="false" class="dbg-chip__label"/>
+                        </engine:VisualElement>
+                        <engine:VisualElement name="bot-speaking-chip" class="dbg-chip">
+                            <engine:VisualElement class="dbg-chip__dot"/>
+                            <engine:Label name="bot-speaking-label" text="Agent silent" enable-rich-text="false" class="dbg-chip__label"/>
+                        </engine:VisualElement>
+                        <engine:VisualElement name="audio-track-chip" class="dbg-chip" style="display: none;">
+                            <engine:VisualElement class="dbg-chip__dot"/>
+                            <engine:Label name="audio-track-label" text="No audio track" enable-rich-text="false" class="dbg-chip__label"/>
+                        </engine:VisualElement>
+                        <engine:VisualElement class="dbg-chip">
+                            <engine:VisualElement class="dbg-chip__dot"/>
+                            <engine:Label name="last-message-label" text="last: none" enable-rich-text="false" class="dbg-chip__label dbg-mono"/>
+                        </engine:VisualElement>
+                    </engine:VisualElement>
+                </engine:VisualElement>
+                <engine:TabView name="conversation-tabs" class="dbg-tabs dbg-tabs--inner">
+                    <engine:Tab name="transcript-tab" label="Transcript">
+                        <engine:VisualElement class="dbg-toolbar">
+                            <engine:Button name="transcript-clear-button" text="Clear" class="dbg-button"/>
+                        </engine:VisualElement>
+                        <engine:ScrollView name="transcript-scroll-view" mode="Vertical" class="dbg-list"/>
+                    </engine:Tab>
+                    <engine:Tab name="feed-tab" label="RTVI feed">
+                        <engine:VisualElement class="dbg-toolbar">
+                            <engine:Button name="feed-pause-button" text="Pause" class="dbg-button"/>
+                            <engine:Button name="feed-clear-button" text="Clear" class="dbg-button"/>
+                        </engine:VisualElement>
+                        <engine:ScrollView name="message-feed-scroll-view" mode="Vertical" class="dbg-list"/>
+                    </engine:Tab>
+                </engine:TabView>
+            </engine:Tab>
+            <engine:Tab name="console-tab" label="Console">
+                <engine:VisualElement class="dbg-toolbar">
+                    <engine:Toggle name="log-filter-toggle" text="Log" value="true" class="dbg-toggle dbg-toggle--log"/>
+                    <engine:Toggle name="warning-filter-toggle" text="Warning" value="true" class="dbg-toggle dbg-toggle--warn"/>
+                    <engine:Toggle name="error-filter-toggle" text="Error" value="true" class="dbg-toggle dbg-toggle--error"/>
+                </engine:VisualElement>
+                <engine:ScrollView name="log-scroll-view" mode="Vertical" class="dbg-list"/>
+                <engine:VisualElement class="dbg-footer">
+                    <engine:Label name="log-summary-label" text="" enable-rich-text="false" class="dbg-label-dim dbg-spacer"/>
+                    <engine:Button name="log-pause-button" text="Pause" class="dbg-button"/>
+                    <engine:Button name="log-clear-button" text="Clear" class="dbg-button"/>
+                </engine:VisualElement>
+            </engine:Tab>
+        </engine:TabView>
+    </engine:VisualElement>
+</engine:UXML>

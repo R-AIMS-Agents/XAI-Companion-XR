@@ -1,8 +1,8 @@
-# XAI-Companion-XR
+# TrIVA-Unity
 
 **An Intelligent Virtual Agent (IVA) pipeline built for developing and studying trustworthy IVAs in XR.**
 
-Unity XR client of the XAI Companion, an embodied AI agent in VR/AR. LiveKit carries audio and data between this client and the Python backend in [XAI-Companion-Backend](https://github.com/R-AIMS-Agents/XAI-Companion-Backend); the agent's speech drives lip sync, blinking and gaze on a humanoid avatar.
+Unity XR client of TrIVA, an embodied AI agent in VR/AR. LiveKit carries audio and data between this client and the Python backend in [TrIVA-Backend](https://github.com/TrIVAs/TrIVA-Backend); the agent's speech drives lip sync, blinking and gaze on a humanoid avatar.
 
 This repository is a complete Unity project: clone it, open it, import the Rocketbox Agent sample and press Play.
 
@@ -10,22 +10,22 @@ This repository is a complete Unity project: clone it, open it, import the Rocke
 
 ## Requirements
 
-- **Unity 6000.3 LTS** (the project is saved with 6000.3.28f1) or newer, installed through Unity Hub, with URP, XR Interaction Toolkit 3.7.0 and OpenXR (all already set up in this project). The XAI Companion package also works in newer Unity 6 versions such as 6000.7.
+- **Unity 6000.3 LTS** (the project is saved with 6000.3.28f1) or newer, installed through Unity Hub, with URP, XR Interaction Toolkit 3.7.0 and OpenXR (all already set up in this project). The TrIVA Agent package also works in newer Unity 6 versions such as 6000.7.
 - **Git**. The LiveKit Unity SDK and uLipSync are pulled from Git repositories when the project opens.
 - **A PC VR headset** on an OpenXR runtime, such as Meta Quest Link or SteamVR, and a microphone.
-- **The backend**, [XAI-Companion-Backend](https://github.com/R-AIMS-Agents/XAI-Companion-Backend), which serves LiveKit tokens and runs the agent. The token endpoint is set in `Packages/com.r-aims-agents.xai-companion/Runtime/Config/TokenSourceConfig.asset` (default `http://localhost:8080/getToken`).
+- **The backend**, [TrIVA-Backend](https://github.com/TrIVAs/TrIVA-Backend), which serves LiveKit tokens and runs the agent. The token endpoint is set in `Packages/com.trivas.agent/Runtime/Config/TokenSourceConfig.asset` (default `http://localhost:8080/getToken`).
 
 ## Getting started
 
 1. Clone this repository and open the folder in Unity Hub. The first import resolves the Git packages and takes a while.
-2. Open **Window > Package Manager**, select **XAI Companion** under *In Project*, open its **Samples** tab and import **Rocketbox Agent**. This copies the sample to `Assets/Samples/XAI Companion/`.
+2. Open **Window > Package Manager**, select **TrIVA Agent** under *In Project*, open its **Samples** tab and import **Rocketbox Agent**. This copies the sample to `Assets/Samples/TrIVA Agent/`.
 3. Start the backend with the `chat` scenario. Its `lab` scenario greets and chats, but its task runs on game snapshots, which the demo does not send.
 
    ```powershell
    uv run python -m agent.run --scenario chat
    ```
 
-4. Open `Assets/Samples/XAI Companion/<version>/Rocketbox Agent/Rocketbox Agent Demo.unity` and press Play.
+4. Open `Assets/Samples/TrIVA Agent/<version>/Rocketbox Agent/Rocketbox Agent Demo.unity` and press Play.
 
 The demo scene has an XR Origin with a teleportable floor, the Rocketbox avatar Female_Adult_01 (MIT) as the agent, the LiveKit connection and a world-space debug panel. The imported sample belongs to the project and can be changed freely: the avatar swapped, objects added, further scenes and scenarios built next to it. A scenario is a task participants solve together with the agent; it tells the agent what the participant does by sending RTVI client messages.
 
@@ -33,16 +33,16 @@ More free avatars are available in the [Microsoft Rocketbox](https://github.com/
 
 ## Where the files are
 
-Unity projects keep their own files in `Assets/`, but they can also hold code in `Packages/`. This project does both. In the Project window, the agent code appears under **Packages > XAI Companion**, not under Assets, and opens and edits there like any other file.
+Unity projects keep their own files in `Assets/`, but they can also hold code in `Packages/`. This project does both. In the Project window, the agent code appears under **Packages > TrIVA Agent**, not under Assets, and opens and edits there like any other file.
 
 | Path | Contents |
 |---|---|
-| `Packages/com.r-aims-agents.xai-companion/` | The agent code, shared by every scene and project that uses the agent |
-| `Assets/Samples/XAI Companion/` | The imported Rocketbox Agent sample: avatar, materials, animations, animator and demo scene |
+| `Packages/com.trivas.agent/` | The agent code, shared by every scene and project that uses the agent |
+| `Assets/Samples/TrIVA Agent/` | The imported Rocketbox Agent sample: avatar, materials, animations, animator and demo scene |
 | `Assets/Scenes/LiveKitConnectionTest.unity` | Minimal scene that only connects to LiveKit, for testing the backend |
 | `Assets/Samples/XR Interaction Toolkit/`, `Assets/Samples/XR Hands/` | Samples of those packages; Starter Assets and World Space UI are used by the demo scene and the debug panel |
 
-The agent code inside `Packages/com.r-aims-agents.xai-companion/`:
+The agent code inside `Packages/com.trivas.agent/`:
 
 | Folder | Contents |
 |---|---|
@@ -64,4 +64,4 @@ LiveKit is pinned in `Packages/manifest.json` to [a fork](https://github.com/Mir
 
 ## Using the agent in another Unity project
 
-Optional, for adding the agent to an existing project instead of working in this one. Add the LiveKit Unity SDK and uLipSync Git packages from this project's `Packages/manifest.json` to that project's manifest (Unity packages cannot declare Git dependencies themselves), then the agent package, either as a local path (`"file:<path to>/Packages/com.r-aims-agents.xai-companion"`) or as a Git URL with `?path=/Packages/com.r-aims-agents.xai-companion`. Import the XR Interaction Toolkit samples **Starter Assets** and **World Space UI** there too.
+Optional, for adding the agent to an existing project instead of working in this one. Add the LiveKit Unity SDK and uLipSync Git packages from this project's `Packages/manifest.json` to that project's manifest (Unity packages cannot declare Git dependencies themselves), then the agent package, either as a local path (`"file:<path to>/Packages/com.trivas.agent"`) or as a Git URL with `?path=/Packages/com.trivas.agent`. Import the XR Interaction Toolkit samples **Starter Assets** and **World Space UI** there too.
