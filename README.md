@@ -2,7 +2,7 @@
 
 **An Intelligent Virtual Agent (IVA) pipeline built for developing and studying trustworthy IVAs in XR.**
 
-Unity XR client of TrIVA, an embodied AI agent in VR/AR. LiveKit carries audio and data between this client and the Python backend in [TrIVA-Backend](https://github.com/TrIVAs/TrIVA-Backend); the agent's speech drives lip sync, blinking and gaze on a humanoid avatar.
+Unity XR client of TrIVA, an embodied AI agent in VR/AR. LiveKit carries audio and data between this client and the Python backend in [TrIVA-Backend](https://github.com/TrIVAs-XR/TrIVA-Backend); the agent's speech drives lip sync, blinking and gaze on a humanoid avatar.
 
 This repository is a complete Unity project: clone it, open it, import the Rocketbox Agent sample and press Play.
 
@@ -13,7 +13,7 @@ This repository is a complete Unity project: clone it, open it, import the Rocke
 - **Unity 6000.3 LTS** (the project is saved with 6000.3.28f1) or newer, installed through Unity Hub, with URP, XR Interaction Toolkit 3.7.0 and OpenXR (all already set up in this project). The TrIVA Agent package also works in newer Unity 6 versions such as 6000.7.
 - **Git**. The LiveKit Unity SDK and uLipSync are pulled from Git repositories when the project opens.
 - **A PC VR headset** on an OpenXR runtime, such as Meta Quest Link or SteamVR, and a microphone.
-- **The backend**, [TrIVA-Backend](https://github.com/TrIVAs/TrIVA-Backend), which serves LiveKit tokens and runs the agent. The token endpoint is set in `Packages/com.trivas.agent/Runtime/Config/TokenSourceConfig.asset` (default `http://localhost:8080/getToken`).
+- **The backend**, [TrIVA-Backend](https://github.com/TrIVAs-XR/TrIVA-Backend), which serves LiveKit tokens and runs the agent. The token endpoint is set in `Packages/com.trivas.agent/Runtime/Config/TokenSourceConfig.asset` (default `http://localhost:8080/getToken`).
 
 ## Getting started
 
