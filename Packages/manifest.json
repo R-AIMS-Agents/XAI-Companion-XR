@@ -49,6 +49,6 @@
     "com.unity.modules.xr": "1.0.0"
   },
   "testables": [
-    "com.trivas.agent"
+    "io.github.trivas-xr.agent"
   ]
 }

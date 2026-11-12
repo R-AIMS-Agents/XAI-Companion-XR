@@ -20,7 +20,7 @@
 }
 
 .dbg-mono {
-    -unity-font-definition: url("project://database/Packages/com.trivas.agent/Runtime/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
+    -unity-font-definition: url("project://database/Packages/io.github.trivas-xr.agent/Runtime/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
 }
 
 .dbg-panel {
@@ -381,7 +381,7 @@
     margin-right: 10px;
     font-size: var(--dbg-font-s);
     color: var(--dbg-text-dim);
-    -unity-font-definition: url("project://database/Packages/com.trivas.agent/Runtime/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
+    -unity-font-definition: url("project://database/Packages/io.github.trivas-xr.agent/Runtime/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
 }
 
 .dbg-entry__marker {
@@ -458,7 +458,7 @@
 .dbg-entry--feed .dbg-entry__prefix,
 .dbg-entry--feed .dbg-entry__text {
     font-size: var(--dbg-font-s);
-    -unity-font-definition: url("project://database/Packages/com.trivas.agent/Runtime/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
+    -unity-font-definition: url("project://database/Packages/io.github.trivas-xr.agent/Runtime/UI/Fonts/JetBrainsMono-Regular.ttf?fileID=12800000&guid=3a305076ecab24a44a6a7b0bd9d9a1ea&type=3#JetBrainsMono-Regular");
 }
 
 .dbg-entry--feed .dbg-entry__text {

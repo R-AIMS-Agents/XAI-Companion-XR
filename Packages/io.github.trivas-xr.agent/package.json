@@ -1,5 +1,5 @@
 {
-  "name": "com.trivas.agent",
+  "name": "io.github.trivas-xr.agent",
   "version": "0.1.0",
   "displayName": "TrIVA Agent",
   "description": "Embodied, explainable AI companion for XR: LiveKit connection to a Python backend, agent state, lip sync, blinking and gaze for a humanoid avatar. Also add the LiveKit Unity SDK and uLipSync git packages to the project manifest.",

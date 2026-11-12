@@ -10,8 +10,8 @@
       },
       "hash": "ece3272762f2148dd8d3e658ec04fcbd79d4d97e"
     },
-    "com.trivas.agent": {
-      "version": "file:com.trivas.agent",
+    "io.github.trivas-xr.agent": {
+      "version": "file:io.github.trivas-xr.agent",
       "depth": 0,
       "source": "embedded",
       "dependencies": {

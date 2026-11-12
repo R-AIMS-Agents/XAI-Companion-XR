@@ -39,7 +39,7 @@
   <text class="name" x="330" y="32">Unity project (this repository)</text>
 
   <rect class="repo" x="20" y="42" width="620" height="244" rx="6"/>
-  <text class="sub" x="330" y="62">Agent code: Packages/com.trivas.agent</text>
+  <text class="sub" x="330" y="62">Agent code: Packages/io.github.trivas-xr.agent</text>
 
   <rect class="stage" x="32" y="74" width="380" height="200" rx="6"/>
   <text class="name" x="222" y="96">Agent</text>

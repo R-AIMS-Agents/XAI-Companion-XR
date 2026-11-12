@@ -1,8 +1,8 @@
 TrIVA-Unity
 
-The agent code is the package com.trivas.agent:
+The agent code is the package io.github.trivas-xr.agent:
   Project window: Packages > TrIVA Agent
-  On disk:        Packages/com.trivas.agent/
+  On disk:        Packages/io.github.trivas-xr.agent/
 
 Demo scene and avatar come from the package sample "Rocketbox Agent":
   Window > Package Manager > In Project > TrIVA Agent > Samples > Import
